@@ -8,10 +8,10 @@ import re
 def find_entities(text):
 
     result = {
-        'URLs': re.findall(r'https?://\S+|www\.\S+', text),
-        'IP Addresses': re.findall(r'\b(?:\d{1,3}\.){3}\d{1,3}\b', text),
-        'Dates': re.findall(r'(?:(?:[0-2]?[0-9]|3[01])\/(?:0[1-9]|1[0-2])\/(?:19|20)\d{2})', text),
-        'PAN Numbers': re.findall(r'[A-Z]{5}[0-9]{4}[A-Z]', text),
+        'URLS': re.findall(r'https?://\S+|www\.\S+', text),
+        'IP': re.findall(r'\b(?:\d{1,3}\.){3}\d{1,3}\b', text),
+        'Dates':re.findall(r'(\d{1,2}/\d{1,2}/\d{2,4})',text),
+        'PAN':re.findall(r'[A-Z]{5}[0-9]{4}[A-Z]',text)
     }
     return result
 
