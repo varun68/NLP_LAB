@@ -21,11 +21,11 @@ for token in about_doc:
 
 #-------------Stop Words-----------------------
 spacy_stopwords = spacy.lang.en.stop_words.STOP_WORDS
-len(spacy_stopwords)
 
-for stop_word in list(spacy_stopwords)[:10]:
-    print(stop_word)
-
+print("\nStop Words:")
+for token in about_doc:
+    if token.text.lower() in spacy_stopwords:
+        print(token.text)
 
 #-----------------------Lemmatization------------------
 
