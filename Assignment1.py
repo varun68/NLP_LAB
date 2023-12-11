@@ -29,23 +29,13 @@ for token in about_doc:
 
 #-----------------------Lemmatization------------------
 
-conference_help_text = (
-    "The Moon is a barren, rocky world without air and water. It has dark lava plain on its surface."
-    "The Moon is filled wit craters. It has no light of its own. It gets its light from the Sun."
-)
-conference_help_doc = nlp(conference_help_text)
-for token in conference_help_doc:
+for token in about_doc:
     if str(token) != str(token.lemma_):
         print(f"{str(token):>20} : {str(token.lemma_)}")
 
 
 #-------------------------Part-of-Speech Tagging-------------------
 
-about_text = (
-    "The Moon is a barren, rocky world without air and water. It has dark lava plain on its surface."
-    "The Moon is filled wit craters. It has no light of its own. It gets its light from the Sun."
-)
-about_doc = nlp(about_text)
 for token in about_doc:
     print(
         f"""
@@ -54,7 +44,6 @@ TOKEN: {str(token)}
 TAG: {str(token.tag_):10} POS: {token.pos_}
 EXPLANATION: {spacy.explain(token.tag_)}"""
     )
-
 # Output -
 """
 The 0
